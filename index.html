@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>HTML5 Form Validations</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header text-left">
+                <h2>Payment form example</h2>
+            </div>
+            <div class="card-body">
+                <form id="myForm" onsubmit="return validate()" class="form">
+                    <div id="redalert" class="alert alert-danger" role="alert">
+                        <strong>Some fields are missing</strong>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label for="cardnumber">Card #</label>
+                            <input type="text" name="Card Number" class="form-control" id="cardnumber"
+                                name="Card Number" placeholder="XXXX-XXXX-XXXX-XXX">
+                        </div>
+                        <div class="col-2">
+                            <label for="cvcnum">CVC#</label>
+                            <input type="text" class="form-control" id="cvcnum" name="CVC#" placeholder="CVC#">
+                        </div>
+                        <div class="col-4">
+                            <label for="amnt">Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="icon1">$</span>
+                                <input type="text" class="form-control" id="amnt" name="Amount" placeholder="Amount">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label for="firstnm">First Name</label>
+                            <input type="text" class="form-control" id="firstnm" name="First Name"
+                                placeholder="First Name">
+                        </div>
+                        <div class="col-6 ">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" name="Last Name"
+                                placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-8 ">
+                            <label for="ciudad">City</label>
+                            <input type="text" class="form-control" id="ciudad" name="City" placeholder="City">
+                        </div>
+                        <div class="col-2">
+                            <label class="my-1 mr-2" for="prov">State</label>
+                            <select class="custom-select my-1 mr-sm-2" id="prov">
+                                <option selected>State</option>
+                                <option value="1">Heredia</option>
+                                <option value="2">San Jose</option>
+                                <option value="3">Alajuela</option>
+                                <option value="4">Guanacaste</option>
+                                <option value="5">Cartago</option>
+                                <option value="6">Puntarenas</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <label for="postcode">Postal Code</label>
+                            <input type="text" class="form-control" id="postcode" name="Postal Code"
+                                placeholder="Postal Code">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            We accept:
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck1">
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
+                                <i class="fab fa-cc-visa"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck3">
+                                <i class="fab fa-cc-diners-club"></i>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck4">
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                        <div id="msg" class="col-6">
+                            <label for="msg">Message</label>
+                            <textarea class="form-control" name="Message" cols="3" rows="3"
+                                placeholder="Enter description..."></textarea>
+                        </div>
+                    </div>
+            </div>
+            <div class="card-footer text-muted text-right">
+                <button class="btn btn-secondary" id="button1" type="reset" onclick="btn1()">Cancel</button>
+                <button class="btn btn-primary" id="button2" type="submit">Send</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
