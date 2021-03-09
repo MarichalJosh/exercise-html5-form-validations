@@ -22,44 +22,46 @@
                 <h2>Payment form example</h2>
             </div>
             <div class="card-body">
-                <form id="myForm" onsubmit="return validate()" class="form">
+                <form id="form" class="form">
                     <div id="redalert" class="alert alert-danger" role="alert">
                         <strong>Some fields are missing</strong>
                     </div>
                     <div class="form-row">
                         <div class="col-6">
                             <label for="cardnumber">Card #</label>
-                            <input type="text" name="Card Number" class="form-control" id="cardnumber"
-                                name="Card Number" placeholder="XXXX-XXXX-XXXX-XXX">
+                            <input type="text" class="form-control" id="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX" >                            
+                            <small id="smallcard"></small>
                         </div>
                         <div class="col-2">
                             <label for="cvcnum">CVC#</label>
-                            <input type="text" class="form-control" id="cvcnum" name="CVC#" placeholder="CVC#">
+                            <input type="text" class="form-control" id="cvcnum" placeholder="CVC#">                            
+                            <small id="smallcvc"></small>
                         </div>
                         <div class="col-4">
                             <label for="amnt">Amount</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="icon1">$</span>
-                                <input type="text" class="form-control" id="amnt" name="Amount" placeholder="Amount">
+                                <input type="text" class="form-control" id="amnt" placeholder="Amount">                             
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-6">
                             <label for="firstnm">First Name</label>
-                            <input type="text" class="form-control" id="firstnm" name="First Name"
-                                placeholder="First Name">
+                            <input type="text" class="form-control" id="firstnm" placeholder="First Name">                            
+                            <small id="smallfn"></small>                            
                         </div>
                         <div class="col-6 ">
                             <label for="lastname">Last Name</label>
-                            <input type="text" class="form-control" id="lastname" name="Last Name"
-                                placeholder="Last Name">
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name">                           
+                            <small id="smallln"></small> 
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-8 ">
                             <label for="ciudad">City</label>
-                            <input type="text" class="form-control" id="ciudad" name="City" placeholder="City">
+                            <input type="text" class="form-control" id="ciudad" placeholder="City">                            
+                            <small id="smallcity"></small> 
                         </div>
                         <div class="col-2">
                             <label class="my-1 mr-2" for="prov">State</label>
@@ -71,12 +73,13 @@
                                 <option value="4">Guanacaste</option>
                                 <option value="5">Cartago</option>
                                 <option value="6">Puntarenas</option>
-                            </select>
+                            </select>                            
+                            <small id="smallstate"></small> 
                         </div>
                         <div class="col-2">
                             <label for="postcode">Postal Code</label>
-                            <input type="text" class="form-control" id="postcode" name="Postal Code"
-                                placeholder="Postal Code">
+                            <input type="text" class="form-control" id="postcode" placeholder="Postal Code">                            
+                            <small id="smallcode"></small> 
                         </div>
                     </div>
                     <div class="form-row">
@@ -97,7 +100,8 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck4">
                                 <i class="fab fa-cc-amex"></i>
-                            </div>
+                            </div>                            
+                            <small id="smallcheck"></small> 
                         </div>
                         <div id="msg" class="col-6">
                             <label for="msg">Message</label>

@@ -1,0 +1,47 @@
+body{
+    position: relative;
+    background-color: black;
+}
+#smallcard{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+#smallcvc{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+
+#smallfn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+#smallln{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+#smallcity{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+#smallstate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e74c3c;    
+}
+#smallcode{
+    position: absolute;
+    bottom: 10;
+    left: 0;
+    color: #e74c3c;    
+}

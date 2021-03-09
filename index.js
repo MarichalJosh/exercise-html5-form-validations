@@ -1,44 +1,62 @@
 
-let check1 = document.querySelector("invalidCheck1");
-let check2 = document.querySelector("invalidCheck2");
-let check3 = document.querySelector("invalidCheck3");
-let check4 = document.querySelector("invalidCheck4");
-let canbutton = document.querySelector("button1");
-let sendbutton = document.querySelector("button2");
-var numbercard = document.getElementById("cardnumber");
-var cvcnumb = document.getElementById("cvcnum");
-var amount = document.getElementById("amnt");
-var firstna = document.getElementById("firstnm");
-var lanam = document.getElementById("lastname");
-var cit = document.getElementById("ciudad");
-var selprov = document.getElementById("prov")
-var codepost = document.getElementById("postcode")
+const form = document.getElementById("form");
+const numbercard = document.getElementById("cardnumber");
+const cvcnumb = document.getElementById("cvcnum");
+const amount = document.getElementById("amnt");
+const firstna = document.getElementById("firstnm");
+const lanam = document.getElementById("lastname");
+const cit = document.getElementById("ciudad");
+const selprov = document.getElementById("prov");
+const codepost = document.getElementById("postcode");
+const errorcard = document.getElementById("smallcard")
+const errorcvc = document.getElementById("smallcvc")
+const erroramount = document.getElementById("smallamnt")
+const errorfn = document.getElementById("smallfn")
+const errorln = document.getElementById("smallln")
+const errorcity = document.getElementById("smallcity")
+const errorpost = document.getElementById("smallcode")
 
-function validate(){    
-    
 
-    if(numbercard.value=="" ||cvcnumb.value==""||amount.value==""||firstna.value==""||lanam.value==""
-    ||cit.value==""||selprov.value==""||codepost.value=="")
-    {
-        alert("No blank values allowed");
-        return false;
-    }
+form.addEventListener('submit',function(e) {
+    e.preventDefault();
+    if (numbercard.value.length > 16 || numbercard.value.length <= 0) {
+            errorcard.innerHTML = "Please enter a valid Credit Card Number containing 16 digits";
+            numbercard.style.backgroundColor = "#e74c3c";
+        }
+    if (cvcnumb.value.length > 3 || cvcnumb.value.length <= 0) {
+            errorcvc.innerHTML = "Invalid CVC#";
+            cvcnumb.style.backgroundColor = "#e74c3c";
+        }
+    if (amount.value.length <= 0) {            
+            amount.style.backgroundColor = "#e74c3c";
+        }
+    if (firstna.value.length <= "") {
+            errorfn.innerHTML = "Please enter a name";        
+            firstna.style.backgroundColor = "#e74c3c";
+        }
+    if (lanam.value.length <= "") {
+            errorln.innerHTML = "Please enter a last name";        
+            lanam.style.backgroundColor = "#e74c3c";
+        }
+    if (codepost.value.length > 5 ||codepost.value.length <= 0) {
+            errorpost.innerHTML = "Please enter a valid postal code";        
+            codepost.style.backgroundColor = "#e74c3c";
+        }
+    if (cit.value.length <= "") {
+            errorcity.innerHTML = "Please enter a city";        
+            cit.style.backgroundColor = "#e74c3c";
+        }
     else{
-        true;
+        alert("Form was completed successfully")
+        form.reset();
+        numbercard.style.backgroundColor = "white"
+        cvcnumb.style.backgroundColor = "white"
+        amount.style.backgroundColor = "white"
+        firstna.style.backgroundColor = "white"
+        lanam.style.backgroundColor = "white"
+        codepost.style.backgroundColor = "white"
+        cit.style.backgroundColor = "white"
     }
-}
+    
+});
 
-//document.addEventListener("DOMContentLoaded", function() {
-   // var elements = document.getElementsByTagName("INPUT");
-    //for (var i = 0; i < elements.length; i++) {
-       // elements[i].oninvalid = function(e) {
-         //   e.target.setCustomValidity("");
-           // if (!e.target.validity.valid) {
-             //   e.target.setCustomValidity("This field cannot be left blank");
-           // }
-        //};
-        //elements[i].oninput = function(e) {
-            //e.target.setCustomValidity("");
-        //};
-    //}
-//})
